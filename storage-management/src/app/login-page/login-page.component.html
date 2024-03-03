@@ -1,0 +1,29 @@
+<div class="container">
+    <p-card header="Login">
+    <div class="form-container">
+      <div class="form-group">
+        <div class="input-group">
+          <label class="input-label">Username</label>
+          <input pInputText id="username" type="text" [(ngModel)]="loginForm" class="input-field" />
+        </div>
+        <br>
+        <div class="input-group">
+          <label class="input-label">Password</label>
+          <input pInputText id="password" type="password" [(ngModel)]="passwordForm" class="input-field" />
+        </div>
+      </div>
+      
+      <div class="button-container">
+        <div class="button-login">
+          <p-button label="Login" (onClick)="onClick()" icon="pi pi-user"></p-button>
+        </div>
+        <div class="button-signup">
+          <p-button label="Sign Up" icon="pi pi-user-plus"></p-button>
+        </div>
+        {{login.login}}
+        {{login.password}}
+      </div>
+    </div>
+    </p-card>
+  </div>
+  

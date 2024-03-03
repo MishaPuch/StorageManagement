@@ -1,22 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { ChildComponent } from './components/MainPage/child.components/app.child-components';
-import { CardModule } from 'primeng/card';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet ,
-    FormsModule ,
-    ChildComponent,
-    CardModule
+    RouterOutlet,
+    LoginPageComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
- name = '';
-
+  title = 'storage-management';
 }

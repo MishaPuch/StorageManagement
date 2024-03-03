@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-label {
+    width: 6rem;
+    margin-right: 10px;
+  }
+  
+  .input-field {
+    width: 12rem;
+  }
+  
+  .divider-container {
+    margin: 0 10px;
+  }
+  
+  .divider-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between; /* Ensure buttons are spaced apart */
+    align-items: center;
+  }
+  
+  .button-login,
+  .button-signup {
+    width: 10rem;
+    margin-top: 20px;
+  }
+  
