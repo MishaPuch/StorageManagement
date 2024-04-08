@@ -33,8 +33,8 @@ namespace StorageManagement.Controllers
             return await _userService.GetUsersByRoleAsync(roleID);
         }
 
-        [HttpGet("{email}")]
-        public async Task<IActionResult> GetUserByEmailAsync(string email, [FromBody] string password)
+        [HttpGet("{email}/{password}")]
+        public async Task<IActionResult> GetUserByEmailAsync(string email, string password)
         {
             if (string.IsNullOrEmpty(email))
             {
@@ -47,7 +47,7 @@ namespace StorageManagement.Controllers
                 return NotFound();
             }
 
-            return Ok(new { id = user.ID, email = user.Email });
+            return Ok(new { user });
         }
 
         [HttpPost]

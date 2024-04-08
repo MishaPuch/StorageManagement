@@ -1,5 +1,6 @@
+<!-- login-page.component.html -->
 <div class="container">
-    <p-card header="Login">
+  <p-card header="Login">
     <div class="form-container">
       <div class="form-group">
         <div class="input-group">
@@ -15,7 +16,7 @@
       
       <div class="button-container">
         <div class="button-login">
-          <p-button label="Login" (onClick)="onClick()" icon="pi pi-user"></p-button>
+          <p-button label="Login" (click)="onClick()" icon="pi pi-user"></p-button>
         </div>
         <div class="button-signup">
           <p-button label="Sign Up" icon="pi pi-user-plus"></p-button>
@@ -24,6 +25,5 @@
         {{login.password}}
       </div>
     </div>
-    </p-card>
-  </div>
-  
+  </p-card>
+</div>
