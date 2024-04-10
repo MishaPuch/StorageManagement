@@ -37,17 +37,15 @@ export class LoginPageComponent {
     const encodedLogin = encodeURIComponent(this.login.login);
     const encodedPassword = encodeURIComponent(this.login.password);
 
-    this.http.get<User>(`https://localhost:7073/api/User/${encodedLogin}/${encodedPassword}`, httpOptions).subscribe(
+    this.http.get<any>(`https://localhost:7073/api/User/${encodedLogin}/${encodedPassword}`, httpOptions).subscribe(
           response => {
-            this.user = response;
-            console.log('Assigned user:', this.user);
-        localStorage.setItem('currentUser', JSON.stringify(this.user));
-        this.router.navigateByUrl('/main');
-      },
-      error => {
-        console.error('Error:', error);
-      }
+            this.user = response.user;
+            localStorage.setItem('currentUser', JSON.stringify(this.user));
+            this.router.navigateByUrl('/main');
+          },
+          error => {
+            console.error('Error:', error);
+          }
     );
   }
-  
 }
