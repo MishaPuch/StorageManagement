@@ -35,7 +35,7 @@ namespace BLL_StorageManagement.Service.Services
 
         public async Task AddNewUserAsync(User user)
         {
-            await _userRepository.UpdateUserAsync(user);
+            await _userRepository.AddNewUserAsync(user);
         }
 
         public async Task DeleteUserByIdAsync(int id)

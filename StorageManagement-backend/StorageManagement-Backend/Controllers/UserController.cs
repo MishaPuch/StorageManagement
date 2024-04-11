@@ -1,4 +1,6 @@
-﻿using BLL_StorageManagement.Service.Interfaces;
+﻿using AutoMapper;
+using BLL_StorageManagement.Dto;
+using BLL_StorageManagement.Service.Interfaces;
 using DAL.Model;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,10 +11,11 @@ namespace StorageManagement.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-
-        public UserController(IUserService userService)
+        private readonly IMapper _mapper;
+        public UserController(IUserService userService, IMapper mapper)
         {
             _userService = userService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -51,15 +54,15 @@ namespace StorageManagement.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddUserAsync([FromBody] User user)
+        public async Task<IActionResult> AddUserAsync([FromBody] UserDto userDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
+            var user=MapUserToUser(userDto);
             await _userService.AddNewUserAsync(user);
-            return CreatedAtRoute("GetUser", new {id = user.ID}, user);
+            return Ok(user);
         }
 
         [HttpPut("{id:int}")]
@@ -84,6 +87,10 @@ namespace StorageManagement.Controllers
         {
             await _userService.DeleteUserByIdAsync(id);
             return NoContent();
+        }
+        private User MapUserToUser(UserDto userDto)
+        {
+            return _mapper.Map<UserDto , User>(userDto);
         }
     }
 }

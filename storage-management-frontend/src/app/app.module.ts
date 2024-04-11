@@ -4,18 +4,29 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardModule } from 'primeng/card';
-
-import { LoginPageComponent } from './login-page/login-page.component';
-import { MainPageComponent } from './main-page/main-page.component';
+import { UserService } from './services/user.service';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button'; 
 import { HttpClientModule } from '@angular/common/http';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    MainPageComponent
+    MainPageComponent,
+    NavBarComponent,
+    SettingsComponent,
+    ProductsComponent,
+    OrdersComponent,
+    RegistrationComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,10 +34,11 @@ import { HttpClientModule } from '@angular/common/http';
     ButtonModule, 
     CardModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule    
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    
   ],  bootstrap: [AppComponent]
 })
 export class AppModule { }

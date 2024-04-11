@@ -1,0 +1,31 @@
+/* nav-bar.component.css */
+
+.navbar {
+    background-color: #454545; /* Set the background color */
+    color: #fff; /* Set the text color */
+    padding: 10px; /* Add padding to the navbar */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem; /* Adjust the font size of the brand */
+    margin: 1rem;
+  }
+  
+  .navbar-links {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align items to the left */
+    flex: 1; /* Allow links to take up remaining space */
+  }
+  
+  .navbar-link {
+    color: #fff; /* Set the color of the links */
+    text-decoration: none; /* Remove underlines from links */
+    margin-right: 20px; /* Add space between links */
+  }
+
+  .logout-button {
+    margin-left: 20px; /* Add space to the left of the logout button */
+  }
