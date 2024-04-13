@@ -1,1 +1,24 @@
-<p>settings works!</p>
+<p-card header="User Settings">
+    <form class="p-grid p-fluid" *ngIf="user">
+        <div class="p-field p-col">
+            <label for="name">Name</label>
+            <input id="name" type="text" pInputText [(ngModel)]="user.name" name="name" />
+        </div>
+        <div class="p-field p-col">
+            <label for="email">Email</label>
+            <input id="email" type="email" pInputText [(ngModel)]="user.email" name="email" />
+        </div>
+        <div class="p-field p-col">
+            <label for="password">Password</label>
+            <input id="password" type="password" pInputText [(ngModel)]="user.password" name="password" />
+        </div>
+        <div class="p-field p-col">
+            <label for="address">Address</label>
+            <textarea id="address" pInputTextarea [(ngModel)]="user.address" name="address"></textarea>
+        </div>
+
+        <div class="p-field p-col">
+            <button pButton type="button" (click)="onClick()" label="Save" class="p-button-success"></button>
+        </div>
+    </form>
+</p-card>

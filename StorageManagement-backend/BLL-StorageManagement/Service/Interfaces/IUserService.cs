@@ -18,5 +18,8 @@ namespace BLL_StorageManagement.Service.Interfaces
         public Task UpdateUserAsync(User user);
 
         public Task DeleteUserByIdAsync(int id);
+
+        public Task<User> GetUserByEmailAsync(string email);
+
     }
 }

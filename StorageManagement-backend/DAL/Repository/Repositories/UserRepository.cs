@@ -57,5 +57,10 @@ namespace DAL.Repository.Repositories
                 );
             await _appDbContext.SaveChangesAsync();
         }
+
+        public async Task<User> GetUserByEmailAsync(string email)
+        {
+            return await _appDbContext.Users.Include(u => u.Role).FirstOrDefaultAsync(user => user.Email == email);
+        }
     }
 }

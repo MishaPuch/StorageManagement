@@ -1,1 +1,24 @@
-<p>registration works!</p>
+<p-card header="Registration Form">
+    <div class="registration-container">
+        <h2>Registration</h2>
+        <form (ngSubmit)="onClick()">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" [(ngModel)]="user.name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="user.email" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="address" id="address" name="address" [(ngModel)]="user.address" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
+          </div>
+          <p-button type="submit">Register</p-button>
+        </form>
+      </div>
+  </p-card>

@@ -47,5 +47,10 @@ namespace BLL_StorageManagement.Service.Services
         {
             await _userRepository.UpdateUserAsync(user);
         }
+
+        public async Task<User> GetUserByEmailAsync(string email)
+        {
+            return await _userRepository.GetUserByEmailAsync(email);
+        }
     }
 }

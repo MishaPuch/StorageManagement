@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../models/user.model';
+import { User } from '../../models/user';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-main-page',
@@ -8,12 +11,16 @@ import { User } from '../../models/user.model';
 })
 export class MainPageComponent implements OnInit {
   user: User | null=null;
-
-  constructor() {}
+  products:Product[] =[];
+  constructor(private _productService : ProductService) {}
 
   ngOnInit(): void {
     const storedUser = localStorage.getItem('currentUser');
     this.user = storedUser ? JSON.parse(storedUser) : null;
-    console.log(this.user);
+
+    this._productService.GetAllProducts().then(products=>{
+        this.products= products.slice(0- 10);
+      });   
+    
   }
 }

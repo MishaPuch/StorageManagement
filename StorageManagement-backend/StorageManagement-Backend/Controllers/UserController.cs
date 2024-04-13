@@ -60,18 +60,16 @@ namespace StorageManagement.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var user=MapUserToUser(userDto);
+            var user=MapUserDtoToUser(userDto);
             await _userService.AddNewUserAsync(user);
             return Ok(user);
         }
 
-        [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateUserAsync(int id, [FromBody] User user)
+        [HttpPut]
+        public async Task<IActionResult> UpdateUserAsync([FromBody] User user)
         {
-            if (id != user.ID)
-            {
-                return BadRequest("User ID in request body doesn't match route ID");
-            }
+            var changingUser = await _userService.GetUserByEmailAsync(user.Email);
+
 
             if (!ModelState.IsValid) 
             { 
@@ -88,7 +86,7 @@ namespace StorageManagement.Controllers
             await _userService.DeleteUserByIdAsync(id);
             return NoContent();
         }
-        private User MapUserToUser(UserDto userDto)
+        private User MapUserDtoToUser(UserDto userDto)
         {
             return _mapper.Map<UserDto , User>(userDto);
         }

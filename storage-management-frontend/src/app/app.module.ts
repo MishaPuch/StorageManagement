@@ -4,7 +4,6 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardModule } from 'primeng/card';
-import { UserService } from './services/user.service';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +14,8 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { DataViewModule } from 'primeng/dataview';
+import { RatingModule } from 'primeng/rating';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,11 @@ import { RegistrationComponent } from './registration/registration.component';
     BrowserModule,
     AppRoutingModule,
     ButtonModule, 
+    DataViewModule,
     CardModule,
     FormsModule,
-    HttpClientModule    
+    HttpClientModule,
+    RatingModule,
   ],
   providers: [
     provideClientHydration(),

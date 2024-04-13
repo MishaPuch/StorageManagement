@@ -1,4 +1,5 @@
-import { Role } from "./role.model";
+import { Role } from "./role";
+
   export interface User {
     id: number;
     name: string;
@@ -7,5 +8,4 @@ import { Role } from "./role.model";
     address: string;
     roleId: number;
     role: Role; 
-
   }
