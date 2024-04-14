@@ -1,9 +1,10 @@
 import { Product } from "./product";
 
 export interface OrderDetails {
-    ID: number;
-    ProductId: number;
-    OrderId: number;
-    Amount: number;
-    Product?: Product;
+    id: number | null;
+    productId: number | undefined;
+    orderId: number | null;
+    amount: number;
+    status: string,
+    product?: Product ;
   }

@@ -43,7 +43,7 @@ export class UserService {
     }
     return this.user;
   }
-  async AddUser(user:User):Promise<User>{
+  async AddUser(user:User | null):Promise<User>{
     try {
       
       const response = await this.http.post<any>(`${this._requestDetails.Url}/User`, user , this._requestDetails.httpOptions).toPromise();

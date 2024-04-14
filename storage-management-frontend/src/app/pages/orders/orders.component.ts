@@ -12,7 +12,7 @@ export class OrdersComponent {
   orders: any[]  =[];
   totalPrice: number = 0;
 
-  constructor(private _orderDetailService: OrderDetailService) {}
+  constructor(private _orderDetailService: OrderDetailService ) {}
 
   ngOnInit(): void {
     const storedUser = localStorage.getItem('currentUser');

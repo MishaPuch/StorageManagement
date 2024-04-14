@@ -1,4 +1,4 @@
-export interface Category {
-    Id: number;
-    Name: string;
+export interface Category{
+    id: number | undefined;
+    name: string | undefined;
   }
