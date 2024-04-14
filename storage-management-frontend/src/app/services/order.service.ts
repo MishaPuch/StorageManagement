@@ -25,19 +25,14 @@ export class OrderService {
 
   async AddOrderDetails(products: Product[] , user: User): Promise<void> {
     try {
-        const order: Order = {
-            id: 23, // Используем id
-            date: new Date().toISOString(),
+        
+        const order: any = {
             userID: user.id,
-            user: user,
             details: [
               {
-                id: 23,
                 productId: products[0].id,
-                orderId: 23,
                 amount: 1,
-                status: "in work",
-                product: products[0]
+                status: "in work"
               }
             ]
           };
