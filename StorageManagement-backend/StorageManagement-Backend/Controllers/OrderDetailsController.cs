@@ -41,16 +41,30 @@ namespace StorageManagement.Controllers
             return await _orderDetailsService.GetOrderDetailsByProductIdAsync(productId);
         }
 
+        [HttpGet("UserOrderDetails/{userId:int}")]
+        public async Task<IEnumerable<OrderDetails>> GetOrderDetailsByUserIdAsync(int userId)
+        {
+            return await _orderDetailsService.GetOrderDetailsByUserIdAsync(userId);
+        }
+
+        [HttpGet("GetInWorkOrderDetails")]
+        public async Task<IEnumerable<OrderDetails>> GetInWorkOrderDetailsAsync()
+        {
+            return await _orderDetailsService.GetInWorkOrderDetailsIdAsync();
+        }
         [HttpPost]
-        public async Task<IActionResult> AddOrderDetailsAsync([FromBody] OrderDetails orderDetails)
+        public async Task<IActionResult> AddOrderDetailsAsync([FromBody] List<OrderDetails> orderDetails)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            foreach(var item in orderDetails)
+            {
+                await _orderDetailsService.AddNewOrderAsync(item);
 
-            await _orderDetailsService.AddNewOrderAsync(orderDetails);
-            return CreatedAtRoute("GetOrderDetails", new { id = orderDetails.ID }, orderDetails);
+            }
+            return CreatedAtRoute("GetOrderDetails",  orderDetails);
         }
 
         [HttpPut("{id:int}")]

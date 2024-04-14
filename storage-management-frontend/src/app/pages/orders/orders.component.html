@@ -1,1 +1,21 @@
-<p>orders works!</p>
+<div class="order-details">
+    <h2>Order Details</h2>
+    <div *ngIf="orders && orders.length > 0">
+        
+        <div *ngFor="let order of orders">
+            <script>
+                console.log(order)
+            </script>
+            <div class="order-item">
+                <img [src]="order.product?.photo" alt="Product Photo" class="product-photo">
+                <div class="order-info">    
+                    <p><strong>Product:</strong> {{ order.product?.name }}</p>
+                    <p><strong>Price:</strong> {{ order.product?.unitPrice | currency }}</p>
+                    <p><strong>Amount:</strong> {{ order.amount }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p *ngIf="!orders || orders.length === 0">No orders found.</p>
+    <p>Total Price: {{ totalPrice | currency }}</p>
+</div>

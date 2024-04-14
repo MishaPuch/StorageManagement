@@ -13,7 +13,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { OrdersComponent } from './pages/orders/orders.component';
-import { RegistrationComponent } from './registration/registration.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
 import { DataViewModule } from 'primeng/dataview';
 import { RatingModule } from 'primeng/rating';
 

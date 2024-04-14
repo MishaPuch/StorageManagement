@@ -74,5 +74,25 @@ namespace DAL.Repository.Repositories
                 );
             await _appDbContext.SaveChangesAsync();
         }
+
+        public async Task<List<OrderDetails>> GetOrderDetailsByUserIdAsync(int userID)
+        {
+            return await _appDbContext.OrderDetails
+                            //.Include(od => od.Order)
+                            .Where(od => od.Order.UserID == userID)
+                            .Include(od => od.Product)
+                                .ThenInclude(p => p.Category)
+                            .ToListAsync();
+        }
+
+        public async Task<List<OrderDetails>> GetInWorkOrderDetailsIdAsync()
+        {
+            return await _appDbContext.OrderDetails
+                            //.Include(od => od.Order)
+                            .Where(od => od.Status=="in work")
+                            .Include(od => od.Product)
+                                .ThenInclude(p => p.Category)
+                            .ToListAsync();
+        }
     }
 }

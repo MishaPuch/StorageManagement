@@ -5,7 +5,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { SettingsComponent } from './pages/settings/settings.component';
-import { RegistrationComponent } from './registration/registration.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
 
 const routes: Routes = [
   {path:'' , component:LoginPageComponent},

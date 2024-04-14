@@ -12,6 +12,11 @@ namespace BLL_StorageManagement.Service.Interfaces
 
         public Task<List<OrderDetails>> GetOrderDetailsByProductIdAsync(int productID);
 
+        public Task<List<OrderDetails>> GetOrderDetailsByUserIdAsync(int userID);
+
+        public Task<List<OrderDetails>> GetInWorkOrderDetailsIdAsync();
+
+
         //TODO: Improve naming of the functions
 
         public Task AddNewOrderAsync(OrderDetails orderDetails);

@@ -17,5 +17,10 @@ namespace DAL.Repository.Interfaces
         public Task UpdateOrderAsync(OrderDetails orderDetails);
 
         public Task DeleteOrderByIdAsync(int id);
+
+        public Task<List<OrderDetails>> GetOrderDetailsByUserIdAsync(int userID);
+
+        public Task<List<OrderDetails>> GetInWorkOrderDetailsIdAsync();
+
     }
 }

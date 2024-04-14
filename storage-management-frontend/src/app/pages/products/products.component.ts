@@ -22,4 +22,7 @@ export class ProductsComponent {
       });   
     
   }
+  OnClick(product:any){
+    console.log(`${product.name} is orderd `)
+  }
 }

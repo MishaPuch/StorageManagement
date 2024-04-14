@@ -1,13 +1,14 @@
-﻿using System;
+﻿using DAL.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace DAL.Model
+namespace BLL_StorageManagement.Dto
 {
-    public class OrderDetails
+    public class OredrDetailDto
     {
         public int ID { get; set; }
         public int ProductId { get; set; }
@@ -18,6 +19,5 @@ namespace DAL.Model
         public Product Product { get; set; }
         [JsonIgnore]
         public Order Order { get; set; }
-
     }
 }
