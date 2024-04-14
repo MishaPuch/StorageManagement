@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BLL_StorageManagement.Dto;
+using DAL.Model.Dto;
 using DAL.Model;
 
 public class MappingProfile : Profile

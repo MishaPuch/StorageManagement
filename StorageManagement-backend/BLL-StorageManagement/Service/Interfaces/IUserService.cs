@@ -1,5 +1,4 @@
-﻿using BLL_StorageManagement.Dto;
-using DAL.Model;
+﻿using DAL.Model;
 
 namespace BLL_StorageManagement.Service.Interfaces
 {
