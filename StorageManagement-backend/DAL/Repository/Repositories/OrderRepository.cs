@@ -60,10 +60,11 @@ namespace DAL.Repository.Repositories
                 .ToListAsync();
         }
 
-        public async Task AddNewOrderAsync(Order order)
+        public async Task<int> AddNewOrderAsync(Order order)
         {
             await _appDbContext.Orders.AddAsync(order);
             await _appDbContext.SaveChangesAsync();
+            return order.ID;
         }
 
         public async Task DeleteOrderByIdAsync(int id)

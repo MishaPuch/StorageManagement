@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL_StorageManagement.Dto
+namespace DAL.Model.Dto
 {
     public class ProductDto
     {

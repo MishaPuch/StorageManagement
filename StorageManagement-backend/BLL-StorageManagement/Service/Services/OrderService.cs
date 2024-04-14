@@ -33,9 +33,9 @@ namespace BLL_StorageManagement.Service.Services
             return await _orderRepository.GetOrdersByUserIdAsync(userID);
         }
 
-        public async Task AddNewOrderAsync(Order order)
+        public async Task<int> AddNewOrderAsync(Order order)
         {
-            await _orderRepository.AddNewOrderAsync(order);
+            return await _orderRepository.AddNewOrderAsync(order);
         }
 
         public async Task DeleteOrderByIdAsync(int id)

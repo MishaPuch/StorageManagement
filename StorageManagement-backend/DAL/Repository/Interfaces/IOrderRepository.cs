@@ -12,7 +12,7 @@ namespace DAL.Repository.Interfaces
 
         public Task<List<Order>> GetOrdersByDateAsync(DateTime date);
 
-        public Task AddNewOrderAsync(Order order);
+        public Task<int> AddNewOrderAsync(Order order);
 
         public Task UpdateOrderAsync(Order order);
 

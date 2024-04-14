@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BLL_StorageManagement.Dto;
+using DAL.Model.Dto;
 using BLL_StorageManagement.Service.Interfaces;
 using DAL.Model;
 using Microsoft.AspNetCore.Mvc;
