@@ -13,7 +13,6 @@ namespace DAL.Model
         public int ProductId { get; set; }
         public int OrderId { get; set; }
         public int Amount { get; set; }
-        public string Status { get; set; }
         //navigation
         public Product Product { get; set; }
         [JsonIgnore]

@@ -14,8 +14,6 @@ namespace BLL_StorageManagement.Service.Interfaces
 
         public Task<List<OrderDetails>> GetOrderDetailsByUserIdAsync(int userID);
 
-        public Task<List<OrderDetails>> GetInWorkOrderDetailsIdAsync();
-
 
         //TODO: Improve naming of the functions
 

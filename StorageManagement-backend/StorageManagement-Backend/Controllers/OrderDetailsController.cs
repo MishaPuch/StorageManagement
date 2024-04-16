@@ -47,11 +47,6 @@ namespace StorageManagement.Controllers
             return await _orderDetailsService.GetOrderDetailsByUserIdAsync(userId);
         }
 
-        [HttpGet("GetInWorkOrderDetails")]
-        public async Task<IEnumerable<OrderDetails>> GetInWorkOrderDetailsAsync()
-        {
-            return await _orderDetailsService.GetInWorkOrderDetailsIdAsync();
-        }
         [HttpPost]
         public async Task<IActionResult> AddOrderDetailsAsync([FromBody] OrderDetails orderDetails)
         {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { User } from '../../models/user';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
-import { OrderDetailService } from '../../services/orderDetail.serviice';
+import { OrderDetailService } from '../../services/orderDetail.service';
 import { OrderDetails } from '../../models/order-details';
 import { OrderService } from '../../services/order.service';
 
@@ -33,7 +33,7 @@ export class ProductsComponent {
     if (!this.user){
       return;
     }
-    this._orderService.AddOrderDetails([product] , this.user); 
+    this._orderService.AddBucket([product] , this.user); 
   }  
   
 }

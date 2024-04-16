@@ -14,8 +14,11 @@ namespace BLL_StorageManagement.Service.Interfaces
 
         public Task<int> AddNewOrderAsync(Order order);
 
-        public Task UpdateOrderAsync(Order order);
+        public Task UpdateOrderAsync(Order order );
 
         public Task DeleteOrderByIdAsync(int id);
+
+        public Task<Order> GetUserBucket(int userId);
+
     }
 }

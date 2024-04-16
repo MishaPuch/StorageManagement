@@ -6,6 +6,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
+import { BucketComponent } from './pages/bucket/bucket.component';
 
 const routes: Routes = [
   {path:'' , component:LoginPageComponent},
@@ -13,7 +14,9 @@ const routes: Routes = [
   {path:'orders', component:OrdersComponent},
   {path:'products', component:ProductsComponent},
   {path:'settings', component:SettingsComponent},
-  {path:'registration', component:RegistrationComponent}
+  {path:'registration', component:RegistrationComponent},
+  {path:'bucket', component:BucketComponent}
+
 ];
 
 @NgModule({

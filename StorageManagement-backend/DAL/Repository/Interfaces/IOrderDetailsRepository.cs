@@ -20,7 +20,5 @@ namespace DAL.Repository.Interfaces
 
         public Task<List<OrderDetails>> GetOrderDetailsByUserIdAsync(int userID);
 
-        public Task<List<OrderDetails>> GetInWorkOrderDetailsIdAsync();
-
     }
 }

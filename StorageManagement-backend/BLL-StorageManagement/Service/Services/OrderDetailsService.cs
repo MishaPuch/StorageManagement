@@ -52,10 +52,5 @@ namespace BLL_StorageManagement.Service.Services
         {
             return await _orderDetailsRepository.GetOrderDetailsByUserIdAsync(userID);
         }
-
-        public async Task<List<OrderDetails>> GetInWorkOrderDetailsIdAsync()
-        {
-            return await _orderDetailsRepository.GetInWorkOrderDetailsIdAsync();
-        }
     }
 }

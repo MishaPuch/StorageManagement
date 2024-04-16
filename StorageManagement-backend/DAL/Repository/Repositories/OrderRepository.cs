@@ -27,7 +27,7 @@ namespace DAL.Repository.Repositories
         public async Task<Order> GetOrderByIdAsync(int id)
         {
             return await _appDbContext.Orders
-                .Where(order => order.ID == id)
+                .Where(order => order.ID == id && order.Status=="in work")
                 .Include(o => o.User)
                     .ThenInclude(u => u.Role)
                 .Include(o => o.Details)
@@ -75,12 +75,25 @@ namespace DAL.Repository.Repositories
 
         public async Task UpdateOrderAsync(Order order)
         {
-            await _appDbContext.Orders.Include(o => o.User).Where(_order => _order.ID == order.ID)
-                .ExecuteUpdateAsync(setter => setter
-                .SetProperty(_order => _order.Date, order.Date)
-                .SetProperty(_order => _order.UserID, order.UserID)
-                );
+
+            _appDbContext.Orders.Update(order);
+            
             await _appDbContext.SaveChangesAsync();
+        }
+
+
+
+        public async Task<Order> GetUserBucket(int userId)
+        {
+            return await _appDbContext.Orders
+                .Where(order => order.UserID == userId && order.Status=="bucket")
+                .Include(o => o.User)
+                    .ThenInclude(u => u.Role)
+                .Include(o => o.Details)
+                    .ThenInclude(d => d.Product)
+                        .ThenInclude(p => p.Category)
+                .FirstOrDefaultAsync();
+
         }
     }
 }

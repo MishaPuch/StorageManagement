@@ -16,6 +16,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { DataViewModule } from 'primeng/dataview';
 import { RatingModule } from 'primeng/rating';
+import { BucketComponent } from './pages/bucket/bucket.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RatingModule } from 'primeng/rating';
     OrdersComponent,
     RegistrationComponent,
     RegistrationComponent,
+    BucketComponent,
   ],
   imports: [
     BrowserModule,

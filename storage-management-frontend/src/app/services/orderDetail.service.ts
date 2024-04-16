@@ -1,9 +1,9 @@
-import { OrderDetails } from './../models/order-details';
+import { OrderDetails } from '../models/order-details';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RequestDetails } from './requestDetails';
-import { Product } from './../models/product';
+import { Product } from '../models/product';
 
 @Injectable({ providedIn: 'root' })
 export class OrderDetailService {
@@ -25,17 +25,6 @@ export class OrderDetailService {
   async GetOrderDetailsByUserId(id:number | undefined): Promise<OrderDetails[]> {
     try {
       const response = await this.http.get<any>(`${this._requestDetails.Url}/OrderDetails/UserOrderDetails/${id}`, this._requestDetails.httpOptions).toPromise();
-      this.orders = response;
-
-    } catch (error) {
-      console.error('Error:', error);
-      throw error;
-    }
-    return this.orders;
-  }
-  async GetInWorkOrderDetails(): Promise<OrderDetails[]> {
-    try {
-      const response = await this.http.get<any>(`${this._requestDetails.Url}/OrderDetails/GetInWorkOrderDetails`, this._requestDetails.httpOptions).toPromise();
       this.orders = response;
 
     } catch (error) {

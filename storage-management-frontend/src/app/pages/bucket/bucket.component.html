@@ -1,0 +1,40 @@
+<p-card header="Products">
+  <p class="m-0">
+    <p-dataView #dv [value]="this.orders?.details">
+      <ng-template pTemplate="list" let-products>
+        <p-card>
+          <div class="grid grid-nogutter">
+            <div class="col-12" *ngFor="let item of products">
+              <div class="flex flex-column xl:flex-row xl:align-items-start justify-content-end p-4 gap-4">
+                <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round" [src]="item.product.photo" [alt]="item.product.name" />
+                <div class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+                  <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+                    <div class="text-2xl font-bold text-900">{{ item.product.name }}</div>
+                    <div class="flex align-items-center gap-3">
+                      <span class="flex align-items-center gap-2">
+                        <i class="pi pi-tag"></i>
+                        <span class="font-semibold">Category : {{ item.product.category.name }}</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+                    <span class="text-2xl font-semibold">{{ 'Price : $' + item.product.unitPrice }}</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button pButton type="button" icon="pi pi-plus" (click)="AddAmountin(item.product)"></button>
+                  <p>{{item.amount}}</p>
+                  <button pButton type="button" icon="pi pi-minus" (click)="MinorAmountin(item.product)"></button>
+                  <button pButton type="button" icon="pi pi-trash" (click)="DeleteProduct(item.product)"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </p-card>
+      </ng-template>
+    </p-dataView>
+  </p>
+  <div>
+    <p-button label="buy" (click)="OnSubmit()"></p-button>
+  </div>
+</p-card>

@@ -79,17 +79,7 @@ namespace DAL.Repository.Repositories
         {
             return await _appDbContext.OrderDetails
                             //.Include(od => od.Order)
-                            .Where(od => od.Order.UserID == userID)
-                            .Include(od => od.Product)
-                                .ThenInclude(p => p.Category)
-                            .ToListAsync();
-        }
-
-        public async Task<List<OrderDetails>> GetInWorkOrderDetailsIdAsync()
-        {
-            return await _appDbContext.OrderDetails
-                            //.Include(od => od.Order)
-                            .Where(od => od.Status=="in work")
+                            .Where(od => od.Order.UserID == userID && od.Order.Status=="in work")
                             .Include(od => od.Product)
                                 .ThenInclude(p => p.Category)
                             .ToListAsync();

@@ -1,6 +1,8 @@
 ﻿using BLL_StorageManagement.Service.Interfaces;
 using DAL.Model;
 using DAL.Repository.Interfaces;
+using Microsoft.Identity.Client;
+using System.Collections.Generic;
 
 namespace BLL_StorageManagement.Service.Services
 {
@@ -45,7 +47,12 @@ namespace BLL_StorageManagement.Service.Services
 
         public async Task UpdateOrderAsync(Order order)
         {
-            await _orderRepository.UpdateOrderAsync(order);
+            await _orderRepository.UpdateOrderAsync(order );
+        }
+
+        public Task<Order> GetUserBucket(int userId)
+        {
+            return _orderRepository.GetUserBucket(userId);
         }
     }
 }

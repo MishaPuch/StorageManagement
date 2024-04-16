@@ -16,6 +16,8 @@ namespace DAL.Repository.Interfaces
 
         public Task UpdateOrderAsync(Order order);
 
+        public Task<Order> GetUserBucket(int userId);
+
         public Task DeleteOrderByIdAsync(int id);
     }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/user';
-import { OrderDetailService } from '../../services/orderDetail.serviice';
+import { OrderDetailService } from '../../services/orderDetail.service';
 import { OrderDetails } from '../../models/order-details';
 @Component({
   selector: 'app-orders',
