@@ -7,5 +7,9 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
+  showMenu: boolean = false;
 
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
 }

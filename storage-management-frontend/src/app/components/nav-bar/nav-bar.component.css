@@ -29,3 +29,75 @@
   .logout-button {
     margin-left: 20px; /* Add space to the left of the logout button */
   }
+  .navbar {
+    background-color: #454545;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .navbar-links {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+  }
+  
+  .navbar-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .logout-button {
+    margin-left: 20px;
+  }
+  
+  .burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+  }
+  
+  .active {
+    display: flex;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+  
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        background-color: #454545;
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+  
+    .navbar-link {
+        margin: 10px 0;
+    }
+  
+    .active {
+        display: flex;
+    }
+  }
+  
