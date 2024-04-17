@@ -44,6 +44,16 @@
 .active {
   display: flex;
 }
+.overlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
 
 @media screen and (max-width: 768px) 
 {  .burger {
