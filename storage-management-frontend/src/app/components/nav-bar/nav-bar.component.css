@@ -1,103 +1,91 @@
-/* nav-bar.component.css */
-
 .navbar {
-    background-color: #454545; /* Set the background color */
-    color: #fff; /* Set the text color */
-    padding: 10px; /* Add padding to the navbar */
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space items evenly */
-    align-items: center; /* Center items vertically */
-  }
-  
-  .navbar-brand {
-    font-size: 1.5rem; /* Adjust the font size of the brand */
-    margin: 1rem;
-  }
-  
-  .navbar-links {
-    display: flex; /* Use flexbox for layout */
-    justify-content: flex-start; /* Align items to the left */
-    flex: 1; /* Allow links to take up remaining space */
-  }
-  
-  .navbar-link {
-    color: #fff; /* Set the color of the links */
-    text-decoration: none; /* Remove underlines from links */
-    margin-right: 20px; /* Add space between links */
+  background-color: #454545;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.logout-button {
+  margin-left: 20px;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+
+.active {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) 
+{  .burger {
+      display : flex;
   }
 
-  .logout-button {
-    margin-left: 20px; /* Add space to the left of the logout button */
-  }
-  .navbar {
-    background-color: #454545;
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-brand {
-    font-size: 1.5rem;
-    margin: 1rem;
-  }
-  
   .navbar-links {
+      display: none;
+      flex-direction: column;
+      background-color: #454545;
+      padding: 10px;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+  }
+  .navbar-links.active {
+  cursor: pointer;
+  z-index: 1000;
     display: flex;
-    justify-content: flex-start;
-    flex: 1;
+    flex-direction: column;
+    background-color: #454545;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
   }
   
   .navbar-link {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 20px;
+    margin: 10px 0;
   }
   
-  .logout-button {
-    margin-left: 20px;
+  .active + .overlay {
+    display: block;
   }
   
-  .burger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+  .navbar-link {
+      margin: 10px 0;
   }
-  
-  .line {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 3px 0;
-  }
-  
+
   .active {
-    display: flex;
+      display: flex;
   }
-  
-  @media screen and (max-width: 768px) {
-    .burger {
-        display: flex;
-    }
-  
-    .navbar-links {
-        display: none;
-        flex-direction: column;
-        background-color: #454545;
-        padding: 10px;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-    }
-  
-    .navbar-link {
-        margin: 10px 0;
-    }
-  
-    .active {
-        display: flex;
-    }
-  }
-  
+}

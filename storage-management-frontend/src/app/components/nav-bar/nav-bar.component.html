@@ -1,17 +1,21 @@
+<!-- nav-bar.component.html -->
+
 <nav class="navbar">
   <div class="navbar-brand">SM</div>
-
-  <div class="navbar-links" [ngClass]="{'active': showMenu}">
-    <p-button class="navbar-link" routerLink="/main" [text]="true" label="Home"></p-button>
-    <p-button class="navbar-link" routerLink="/settings" [text]="true" label="Settings"></p-button>
-    <p-button class="navbar-link" routerLink="/products" [text]="true" label="Products"></p-button>
-    <p-button class="navbar-link" routerLink="/orders" [text]="true" label="Orders"></p-button>
-    <p-button class="navbar-link logout-button" routerLink="/bucket" [outlined]="true" icon="pi pi-cart-plus"></p-button>
-  </div>
   <div class="burger" (click)="toggleMenu()">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
   </div>
-  <p-button class="navbar-link logout-button" routerLink="/" [outlined]="true" severity="danger" label="Logout"></p-button>
+
+  <div class="navbar-links" [class.active]="isMenuOpen">
+      <p-button class="navbar-link" routerLink="/main" [text]="true" label="Home"></p-button>
+      <p-button class="navbar-link" routerLink="/settings" [text]="true" label="Settings"></p-button>
+      <p-button class="navbar-link" routerLink="/products" [text]="true" label="Products"></p-button>
+      <p-button class="navbar-link" routerLink="/orders" [text]="true" label="Orders"></p-button>
+      <p-button class="navbar-link logout-button" routerLink="/bucket" [outlined]="true"  icon="pi pi-cart-plus"></p-button>
+      <p-button class="navbar-link logout-button" routerLink="/" [outlined]="true" severity="danger" label="Logout"></p-button>
+  </div>
 </nav>
+
+<div class="overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>
