@@ -36,7 +36,6 @@ export class OrderService {
               }
             ]
           };   
-        debugger;
       const response = await this.http.post<any>(`${this._requestDetails.Url}/Order`, order, this._requestDetails.httpOptions).toPromise();
     } catch (error) {
       console.error('Error:', error);

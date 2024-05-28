@@ -44,8 +44,7 @@ export class OrderDetailService {
         status: 'in work',
         product: product
     }
-        
-      debugger;  
+      
       const response = await this.http.post<any>(`${this._requestDetails.Url}/OrderDetails`, orderDetails, this._requestDetails.httpOptions).toPromise();
     } catch (error) {
       console.error('Error:', error);

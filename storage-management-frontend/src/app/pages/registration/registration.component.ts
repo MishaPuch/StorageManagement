@@ -35,7 +35,6 @@ export class RegistrationComponent implements OnInit {
       return;
     }
     this.user.role = this.role;
-    debugger;
 
     this._userService.AddUser(this.user).then(user => {
       this.user = user;
